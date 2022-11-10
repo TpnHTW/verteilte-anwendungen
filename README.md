@@ -4,10 +4,10 @@ Mögliche Punktzahl: 20 Punkte
 
 ## Deadlines
 
-- 1. Zug 1. Gruppe: 14.11.2022
-- 1. Zug 2. Gruppe: 17.11.2022
-- 2. Zug 1. Gruppe: 15.11.2022
-- 2. Zug 2. Gruppe: 15.11.2022 
+- 1. Zug 1. Gruppe: 21.11.2022
+- 1. Zug 2. Gruppe: 24.11.2022
+- 2. Zug 1. Gruppe: 22.11.2022
+- 2. Zug 2. Gruppe: 22.11.2022 
 
 ## Aufgabestellung
 
