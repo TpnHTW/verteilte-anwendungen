@@ -7,6 +7,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * @author Alexander Stanik [stanik@htw-berlin.de]
+ *
  */
 @Path("/hello")
 public class GreetingResource {
@@ -16,4 +17,5 @@ public class GreetingResource {
     public String hello() {
         return "Hello RESTEasy";
     }
+
 }

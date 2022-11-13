@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  nginx_webserver:
+    image: nginx:latest
+    ports:
+      - 5001:80
+    volumes:
+      - ./verteilte-anwendungen/test:/usr/share/nginx/html
+  quarkus_app:
+    image: result:latest
+    build:
+      context: /Users/philipnartschik/verteilte-anwendungen-lab1/src/main/docker/
+      dockerfile: Dockerfile.jvm
+
+# We make four distinct layers so if there are application changes the library layers can be re-used
+
+
+# We make four distinct layers so if there are application changes the library layers can be re-used
