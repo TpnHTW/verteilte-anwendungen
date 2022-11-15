@@ -24,8 +24,9 @@ public class AufgabenResource {
 
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public void anlegen(@QueryParam("zahl") int zahl) {
-        service.add(zahl);
+    public void anlegen(@QueryParam("zahl") String zahl) {
+
+        service.add(Integer.parseInt(zahl));
     }
 
     @GET
@@ -33,13 +34,14 @@ public class AufgabenResource {
     public String letztelesen() {
         return service.getlastZahl() + "";
     }
-
+/*
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public String aktualisieren(@QueryParam("zahl") int zahl, @QueryParam("newZahl") int newZahl) {
         service.update(zahl, newZahl);
         return "Zahl wurde aktualisiert";
     }
+    */
 
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)

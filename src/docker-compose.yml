@@ -3,14 +3,9 @@ services:
   nginx_webserver:
     image: nginx:latest
     ports:
-      - 5001:80
+      - 8081:80
     volumes:
-      - ./verteilte-anwendungen/test:/usr/share/nginx/html
-  quarkus_app:
-    image: result:latest
-    build:
-      context: docker
-      dockerfile: Dockerfile.jvm
+      - ./main/verteilte-anwendungen/test.html:/usr/share/nginx/html/index.html
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
 

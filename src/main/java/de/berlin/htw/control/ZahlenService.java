@@ -10,8 +10,9 @@ public class ZahlenService {
 
     List<Integer> zahlen = new ArrayList<>();
 
+
     public void add(int zahl) {
-        zahlen.add(zahl);
+        zahlen.add(0, zahl );;
     }
 
     public void remove(int zahl) {
@@ -19,10 +20,11 @@ public class ZahlenService {
     }
 
     public int getlastZahl() {
-        return zahlen.get(zahlen.size());
+        return zahlen.get(zahlen.size() - 1);
     }
 
-    public void update(int zahl, int newZahl) {
+    /*''public void update(int zahl, int newZahl) {
         zahlen.set(zahlen.indexOf(zahl), newZahl);
-    }
+    }''
+ */
 }
