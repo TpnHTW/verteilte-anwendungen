@@ -9,7 +9,7 @@ services:
   quarkus_app:
     image: result:latest
     build:
-      context: /Users/philipnartschik/verteilte-anwendungen-lab1/src/main/docker/
+      context: docker
       dockerfile: Dockerfile.jvm
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
