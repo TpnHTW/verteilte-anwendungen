@@ -3,7 +3,7 @@ services:
   nginx_webserver:
     image: nginx:latest
     ports:
-      - 8181:81
+      - 8181:80
     volumes:
       - ./main/verteilte-anwendungen/test.html:/usr/share/nginx/html/index.html
 
