@@ -4,6 +4,7 @@ import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -22,11 +23,12 @@ public class AufgabenResource {
     @Inject
     ZahlenService service;
 
-    @POST
+    @POST 
     @Produces(MediaType.TEXT_PLAIN)
-    public void anlegen(@QueryParam("zahl") String zahl) {
+    public String anlegen(@QueryParam("zahl") int zahl) {
 
-        service.add(Integer.parseInt(zahl));
+        String answer = service.add(zahl);
+        return answer;
     }
 
     @GET
@@ -34,19 +36,18 @@ public class AufgabenResource {
     public String letztelesen() {
         return service.getlastZahl() + "";
     }
-/*
-    @POST
+
+    @PUT
     @Produces(MediaType.TEXT_PLAIN)
-    public String aktualisieren(@QueryParam("zahl") int zahl, @QueryParam("newZahl") int newZahl) {
-        service.update(zahl, newZahl);
+    public String aktualisieren(@QueryParam("zahl") int zahl) {
+        service.update(zahl);
         return "Zahl wurde aktualisiert";
     }
-    */
 
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
     public void loeschen(
-        @QueryParam("number") String number) {
-        service.remove(Integer.parseInt(number));
+        @QueryParam("number") int number) {
+        service.remove(number);
     }
 }

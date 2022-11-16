@@ -3,28 +3,31 @@ package de.berlin.htw.control;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 
-@RequestScoped
+@ApplicationScoped
 public class ZahlenService {
 
-    List<Integer> zahlen = new ArrayList<>();
+    int zahl;
 
+    public ZahlenService() {
+    }
 
-    public void add(int zahl) {
-        zahlen.add(0, zahl );;
+    public String add(int zahl) {
+        this.zahl = zahl;
+        return "zahl geändert"+ this.zahl;
     }
 
     public void remove(int zahl) {
-        zahlen.remove(zahlen.indexOf(zahl));
+        this.zahl = -1;
     }
 
     public int getlastZahl() {
-        return zahlen.get(zahlen.size() - 1);
+        return this.zahl;
     }
 
-    /*''public void update(int zahl, int newZahl) {
-        zahlen.set(zahlen.indexOf(zahl), newZahl);
-    }''
- */
+    public void update(int zahl) {
+        this.zahl = zahl;
+    }
 }
