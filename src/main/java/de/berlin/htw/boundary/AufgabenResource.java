@@ -47,8 +47,9 @@ public class AufgabenResource {
 
     @DELETE
     @Produces("application/example")
-    public void loeschen(
+    public String loeschen(
         @QueryParam("number") int number) {
         service.remove(number);
+        return "Zahl wurde gelöscht";
     }
 }
