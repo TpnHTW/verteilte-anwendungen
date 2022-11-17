@@ -28,28 +28,32 @@ public class AufgabenResource {
     @POST
     @Produces("application/example")
     public String anlegen(@QueryParam("zahl") int zahl) {
+        return service.addList(zahl);
+    }
 
-        return service.add(zahl);
+    @Path("/2/")
+    @GET
+    @Produces("application/example")
+    public String ganzeListe(){
+        return service.getList();
     }
 
     @GET
     @Produces("application/example")
     public String letztelesen() {
-        return service.getlastZahl() + "";
+        return service.getLastNumber();
     }
 
     @PUT
     @Produces("application/example")
     public String aktualisieren(@QueryParam("zahl") int zahl) {
-        service.update(zahl);
-        return "Zahl wurde aktualisiert" + " in : "  + service.getlastZahl();
+        service.updateLastListElement(zahl);
+        return "Die letzte Zahl wurde aktualisiert";
     }
 
     @DELETE
     @Produces("application/example")
-    public String loeschen(
-        @QueryParam("number") int number) {
-        service.remove(number);
-        return "Zahl wurde gelöscht "; //+ "("+service.getlastZahl()+")" ;
+    public String loeschen() {
+        return service.removeLastListElement();
     }
 }
