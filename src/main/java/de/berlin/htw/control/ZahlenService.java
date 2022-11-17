@@ -16,7 +16,7 @@ public class ZahlenService {
 
     public String add(int zahl) {
         this.zahl = zahl;
-        return "zahl geändert"+ this.zahl;
+        return "zahl geändert "+ this.zahl;
     }
 
     public void remove(int zahl) {

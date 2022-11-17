@@ -1,6 +1,7 @@
 package de.berlin.htw.boundary;
 
 import javax.inject.Inject;
+import javax.print.attribute.standard.MediaPrintableArea;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,6 +12,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import de.berlin.htw.control.ZahlenService;
+
 
 /**
  * @author Alexander Stanik [stanik@htw-berlin.de]
@@ -23,29 +25,28 @@ public class AufgabenResource {
     @Inject
     ZahlenService service;
 
-    @POST 
-    @Produces(MediaType.TEXT_PLAIN)
+    @POST
+    @Produces("application/example")
     public String anlegen(@QueryParam("zahl") int zahl) {
 
-        String answer = service.add(zahl);
-        return answer;
+        return service.add(zahl);
     }
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces("application/example")
     public String letztelesen() {
         return service.getlastZahl() + "";
     }
 
     @PUT
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces("application/example")
     public String aktualisieren(@QueryParam("zahl") int zahl) {
         service.update(zahl);
         return "Zahl wurde aktualisiert";
     }
 
     @DELETE
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces("application/example")
     public void loeschen(
         @QueryParam("number") int number) {
         service.remove(number);
