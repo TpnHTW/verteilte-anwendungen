@@ -1,22 +1,19 @@
 package de.berlin.htw.control;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 
 @ApplicationScoped
 public class ZahlenService {
 
     int zahl;
+    int number;
 
     public ZahlenService() {
     }
 
     public String add(int zahl) {
         this.zahl = zahl;
-        return "zahl geändert "+ this.zahl;
+        return "Zahl geändert in: "+ this.zahl;
     }
 
     public void remove(int zahl) {
@@ -26,7 +23,9 @@ public class ZahlenService {
     public int getlastZahl() {
         return this.zahl;
     }
-
+    public int getLastNumber(){
+        return this.number;
+    }
     public void update(int zahl) {
         this.zahl = zahl;
     }

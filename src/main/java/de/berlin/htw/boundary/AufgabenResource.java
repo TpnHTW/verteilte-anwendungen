@@ -42,7 +42,7 @@ public class AufgabenResource {
     @Produces("application/example")
     public String aktualisieren(@QueryParam("zahl") int zahl) {
         service.update(zahl);
-        return "Zahl wurde aktualisiert";
+        return "Zahl wurde aktualisiert" + " in : "  + service.getlastZahl();
     }
 
     @DELETE
@@ -50,6 +50,6 @@ public class AufgabenResource {
     public String loeschen(
         @QueryParam("number") int number) {
         service.remove(number);
-        return "Zahl wurde gelöscht ";
+        return "Zahl wurde gelöscht "; //+ "("+service.getlastZahl()+")" ;
     }
 }
