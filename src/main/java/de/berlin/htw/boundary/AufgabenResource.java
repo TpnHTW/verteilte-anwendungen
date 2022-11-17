@@ -50,6 +50,6 @@ public class AufgabenResource {
     public String loeschen(
         @QueryParam("number") int number) {
         service.remove(number);
-        return "Zahl wurde gelöscht";
+        return "Zahl wurde gelöscht ";
     }
 }
