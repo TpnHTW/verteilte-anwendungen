@@ -5,7 +5,7 @@ services:
     ports:
       - 8181:80
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./main/verteilte-anwendungen/nginx.conf:/etc/nginx/nginx.conf
       - ./main/verteilte-anwendungen/test.html:/usr/share/nginx/html/index.html
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
